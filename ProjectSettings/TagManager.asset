@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - ennemy
+  - ground
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - background
+  - 
+  - 
+  - 
+  - 
+  - level-bg
+  - 
+  - 
+  - player
+  - 
+  - ground
+  - level-fg
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: background
+    uniqueID: 529421769
+    locked: 0
+  - name: level-bg
+    uniqueID: 2124040307
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: ground
+    uniqueID: 2405451797
+    locked: 0
+  - name: level-fg
+    uniqueID: 2967275425
+    locked: 0
