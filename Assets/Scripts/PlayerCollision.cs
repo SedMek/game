@@ -32,7 +32,7 @@ public class PlayerCollision : MonoBehaviour
             PlayerHurtAnimation();
             movement.enabled = false;
             rb.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
-
+            rb.gravityScale = 0.5f;
             FindObjectOfType<GameManager>().endGame();
         }
     }
