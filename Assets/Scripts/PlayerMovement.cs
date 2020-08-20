@@ -6,22 +6,36 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController2D controller;
-    public float runSpeed = 40f;
+    public float runSpeed = 20f;
+    public float sprintSpeed = 40f;
+
     public Animator animator;
     float horizontalMove = 0f;
     bool jump = false;
+    bool sprint = false;
     bool crouch = false;
 
     // Update is called once per frame
     void Update()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
         if (Input.GetButtonDown("Jump"))
+        // Handling jumping
         {
             jump = true;
             animator.SetBool("IsJumping", true);
         }
+        // Handling sprinting
+        if (Input.GetButtonDown("Sprint"))
+        {
+            sprint = true;
+            animator.SetBool("IsSprinting", true);
+        }
+        else if (Input.GetButtonUp("Sprint"))
+        {
+            sprint = false;
+            animator.SetBool("IsSprinting", false);
+        }
+        // Handling crouching
         if (Input.GetButtonDown("Crouch"))
         {
             crouch = true;
@@ -31,10 +45,15 @@ public class PlayerMovement : MonoBehaviour
         {
             crouch = false;
         }
+
+        horizontalMove = Input.GetAxisRaw("Horizontal") * (sprint ? sprintSpeed : runSpeed);
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+
     }
 
     public void OnLanding()
     {
+        Debug.Log("has landed");
         animator.SetBool("IsJumping", false);
     }
 
