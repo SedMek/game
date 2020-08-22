@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class deployEnnemies : MonoBehaviour
+public class DeployEnnemies : MonoBehaviour
 {
     public GameObject bombPrefab;
-    public float respawnTime = 1.0f;
-    // private GameObject spawner;
+    public float minRespawnTime = 1.0f;
+    public float maxRespawnTime = 2.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +24,7 @@ public class deployEnnemies : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(respawnTime);
+            yield return new WaitForSeconds(Random.Range(minRespawnTime, maxRespawnTime));
             SpawnBomb();
         }
     }

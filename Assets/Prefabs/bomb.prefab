@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 447254270913802664}
   - component: {fileID: 447254270913802669}
   - component: {fileID: 591935001740671089}
-  m_Layer: 22
+  - component: {fileID: 3364978434882163400}
+  m_Layer: 21
   m_Name: bomb
   m_TagString: ennemy
   m_Icon: {fileID: 0}
@@ -28,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 447254270913802662}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -99,9 +100,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.008302718, y: -0.07389879}
+  m_Offset: {x: 0.008302689, y: -0.10128486}
   serializedVersion: 2
-  m_Radius: 0.26779845
+  m_Radius: 0.24247366
 --- !u!50 &447254270913802664
 Rigidbody2D:
   serializedVersion: 4
@@ -117,7 +118,7 @@ Rigidbody2D:
   m_Mass: 0.2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0.4
   m_Material: {fileID: 6200000, guid: 5b6d026eaf3829fb99e45bde7be92608, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -154,3 +155,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!68 &3364978434882163400
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447254270913802662}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 5b6d026eaf3829fb99e45bde7be92608, type: 2}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.20347166, y: 0.14157516}
+  - {x: -0.20736456, y: 0.14151776}
+  - {x: 0.17274046, y: 0.15822434}
+  - {x: 0.17267036, y: 0.16057777}

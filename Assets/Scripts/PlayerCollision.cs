@@ -25,10 +25,11 @@ public class PlayerCollision : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collisionInfo)
     {
-        if (collisionInfo.collider.tag == "ennemy")
+        // Debug.Log(collisionInfo.collider.GetShapeHash() == 3237399407);
+        if (collisionInfo.collider.tag == "ennemy" && !(collisionInfo.collider is EdgeCollider2D))
         {
 
-            Debug.Log(collisionInfo.collider.tag);
+            // Debug.Log(collisionInfo.collider.tag);
             PlayerHurtAnimation();
             movement.enabled = false;
             rb.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
