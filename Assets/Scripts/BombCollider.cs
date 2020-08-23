@@ -1,12 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BombCollider : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator animator;
-    private bool released = true;
 
     private void Start()
     {

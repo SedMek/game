@@ -1,21 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EndLevelTrigger : MonoBehaviour
 {
-    public Animator animator;
+    private Animator animator;
 
     private void Start()
     {
         animator = this.GetComponent<Animator>();
     }
+
     private void OnTriggerEnter2D(Collider2D collisionInfo)
     {
-        if (collisionInfo.collider.tag == "Player")
+        if (collisionInfo.GetComponent<Collider2D>().tag == "Player")
         {
-            Debug.Log(collisionInfo.collider.tag);
             animator.enabled = true;
+            Invoke("CompleteLevel", 2);
         }
     }
+
+    private void CompleteLevel()
+    {
+        FindObjectOfType<GameManager>().completeLevel();
+
+    }
+
 }

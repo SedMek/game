@@ -4,15 +4,15 @@ public class GameManager : MonoBehaviour
 {
     bool gameHasEnded = false;
     float restartDelay = 2;
-    // public GameObject levelCompletePanel;
-    // public score scoreText;
+    public GameObject levelCompletePanel;
+    public TimerCounter TextTimer;
     public void endGame()
     {
         if (!gameHasEnded)
         {
             Debug.Log("You lose");
             gameHasEnded = true;
-            // scoreText.enabled = false;
+            TextTimer.enabled = false;
             Invoke("restart", restartDelay);
         }
     }
@@ -22,13 +22,14 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    // public void completeLevel()
-    // {
-    //     if (!gameHasEnded)
-    //     {
-    //         levelCompletePanel.SetActive(true);
-    //         scoreText.enabled = false;
-    //         gameHasEnded = true;
-    //     }
-    // }
+    public void completeLevel()
+    {
+        if (!gameHasEnded)
+        {
+            Debug.Log("Level Won");
+            levelCompletePanel.SetActive(true);
+            TextTimer.enabled = false;
+            gameHasEnded = true;
+        }
+    }
 }
